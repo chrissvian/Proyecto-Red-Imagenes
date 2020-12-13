@@ -52,7 +52,17 @@ function actualizarCrear(){
             document.getElementById("clave").focus();
             return false;
         }
-        return true;
+        if(document.getElementById('Publica').checked){
+            return true;
+        } else if (document.getElementById('Privada').checked){
+            return true;
+        } else{
+            alert("Debe seleccionar que tipo de imagen es");
+            document.getElementById("clave").focus();
+            return false;
+        }
+
+        
                 }
         if (document.getElementById('Crear').checked) {
             if (nombreImagen == ""){
@@ -73,6 +83,15 @@ function actualizarCrear(){
             }
             if (seleccionar == "") {
                 alert("Debe seleccionar un archivo");
+                document.getElementById("clave").focus();
+                return false;
+            }
+            if(document.getElementById('Publica').checked){
+                return true;
+            } else if (document.getElementById('Privada').checked){
+                return true;
+            } else{
+                alert("Debe seleccionar que tipo de imagen es");
                 document.getElementById("clave").focus();
                 return false;
             }
